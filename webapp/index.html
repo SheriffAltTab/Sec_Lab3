@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sec Lab 3 - Trialware Editor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Trialware Text Studio</h1>
+    <p>Лабораторна робота №3: захист ПЗ (Trialware + шифр Віженера)</p>
+  </header>
+
+  <main class="container">
+    <section class="card status-card">
+      <h2>Стан ліцензії</h2>
+      <p id="trialInfo"></p>
+      <p id="licenseInfo"></p>
+      <div class="license-actions">
+        <input id="licenseInput" type="text" placeholder="Введіть ліцензійний ключ">
+        <button id="activateBtn">Активувати</button>
+        <button id="resetActivationBtn" type="button">Скинути активацію</button>
+      </div>
+      <p class="hint">Після 30 днів без активації застосунок блокується.</p>
+    </section>
+
+    <section class="card editor-card">
+      <h2>Редактор тексту</h2>
+      <textarea id="textArea" rows="14" placeholder="Введіть або відкрийте текст..."></textarea>
+
+      <div class="toolbar">
+        <button data-action="new">Новий</button>
+        <button data-action="open">Відкрити файл</button>
+        <button data-action="save">Зберегти файл</button>
+        <button data-action="print">Друк</button>
+        <button data-action="copy">Копіювати</button>
+        <button data-action="clear">Очистити</button>
+      </div>
+
+      <div class="toolbar">
+        <input id="findInput" type="text" placeholder="Пошук">
+        <button data-action="find">Знайти (кількість)</button>
+        <input id="replaceFromInput" type="text" placeholder="Замінити що">
+        <input id="replaceToInput" type="text" placeholder="Замінити на">
+        <button data-action="replace">Замінити все</button>
+      </div>
+
+      <div class="toolbar">
+        <button data-action="upper">ВЕРХНІЙ РЕГІСТР</button>
+        <button data-action="lower">нижній регістр</button>
+        <button data-action="reverse">Реверс тексту</button>
+        <button data-action="trimSpaces">Прибрати зайві пробіли</button>
+      </div>
+
+      <div class="toolbar">
+        <button data-action="stats">Статистика тексту</button>
+        <button data-action="sortLines">Сортувати рядки</button>
+        <button data-action="removeEmptyLines">Видалити порожні рядки</button>
+      </div>
+
+      <p id="resultBox" class="result"></p>
+      <input id="hiddenFileInput" type="file" accept=".txt,.md,.csv,.log,.json" hidden>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
